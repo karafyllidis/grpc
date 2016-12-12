@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package example1;
+
+option java_package = "com.ots.devday.example1";
+option java_outer_classname = "ChatApp";
+
+message ChatMessage {
+    string clientid = 1;
+    string content = 2;
+}
+
+service ChatService {
+    rpc chat(stream ChatMessage) returns (stream ChatMessage);
+}
